@@ -12,7 +12,7 @@ export default function App() {
     fetch("https://dummyapi.io/data/v1/user?limit=50", {
       method: "GET",
       headers: {
-        "app-id": "625ecee6e7479da9b1114e8c",
+        "app-id": "642aeec4b7c1602dfffa029f",
       },
     })
       .then((response) => response.json())
@@ -35,16 +35,19 @@ export default function App() {
     if (error) {
       return <Text>{error}</Text>;
     }
-    console.log(response);
+    console.log(response.data);
     return (
       <FlatList
-        data={response}
-        renderItem={(item) => (
+        data={response.data}
+        renderItem={({ item }) => (
           <>
-            <Image source={{ uri: picture }} style={styles.image} />
-            <View style={styles.textContainer}>
-              <Text style={styles.text}>{firstName}</Text>
-              <Text style={styles.text}>{lastName}</Text>
+            <View style={styles.dataContainer}>
+              <Image source={{ uri: item.picture }} style={styles.image} />
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  {item.firstName} {item.lastName}
+                </Text>
+              </View>
             </View>
           </>
         )}
