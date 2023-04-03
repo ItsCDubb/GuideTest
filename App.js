@@ -38,19 +38,17 @@ export default function App() {
     console.log(response);
     return (
       <FlatList
-        data={response.data}
+        data={response ? response.data : []}
         renderItem={({ item }) => (
           <>
-            <View style={styles.itemContainer}>
-              <View style={styles.dataContainer}>
-                <View style={styles.imageContainer}>
-                  <Image source={{ uri: item.picture }} style={styles.image} />
-                </View>
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    {item.firstName} {item.lastName}
-                  </Text>
-                </View>
+            <View style={styles.dataContainer}>
+              <View style={styles.imageContainer}>
+                <Image source={{ uri: item.picture }} style={styles.image} />
+              </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  {item.firstName} {item.lastName}
+                </Text>
               </View>
             </View>
           </>
