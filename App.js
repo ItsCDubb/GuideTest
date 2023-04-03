@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import styles from "./styles";
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
   let [error, setError] = useState();
   let [response, setResponse] = useState();
 
-  useEffect(() => {
+  useMemo(() => {
     fetch("https://dummyapi.io/data/v1/user?limit=50", {
       method: "GET",
       headers: {
