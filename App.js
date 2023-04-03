@@ -57,6 +57,7 @@ export default function App() {
         )}
         pagingEnabled
         numColumns={2}
+        showsVerticalScrollIndicator={false}
       />
     );
   };
