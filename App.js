@@ -35,18 +35,22 @@ export default function App() {
     if (error) {
       return <Text>{error}</Text>;
     }
-    console.log(response.data);
+    console.log(response);
     return (
       <FlatList
         data={response.data}
         renderItem={({ item }) => (
           <>
-            <View style={styles.dataContainer}>
-              <Image source={{ uri: item.picture }} style={styles.image} />
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  {item.firstName} {item.lastName}
-                </Text>
+            <View style={styles.itemContainer}>
+              <View style={styles.dataContainer}>
+                <View style={styles.imageContainer}>
+                  <Image source={{ uri: item.picture }} style={styles.image} />
+                </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.text}>
+                    {item.firstName} {item.lastName}
+                  </Text>
+                </View>
               </View>
             </View>
           </>

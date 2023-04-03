@@ -2,38 +2,37 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
     paddingTop: 20,
-    backgroundColor: "white",
   },
   dataContainer: {
+    flex: 1,
     alignItems: "center",
-    justifyContent: "space-between",
-    width: "50%",
+    width: "79%",
+    marginTop: 10,
     margin: 5,
-    paddingTop: 3,
+    paddingTop: 5,
     borderWidth: 1,
-    borderColor: "grey",
+    borderColor: "#222222",
     borderRadius: 15,
-    backgroundColor: "lightgrey",
+    backgroundColor: "#e0e0e0",
+  },
+  imageContainer: {
+    width: "100%",
+    alignItems: "center",
   },
   image: {
     aspectRatio: 1,
-    width: 100,
-    padding: 1,
-    width: "50%",
+    width: "65%",
+    paddingBottom: 3,
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: "#a9a9a9",
     borderRadius: 100,
   },
   textContainer: {
     flex: 1,
-    flexDirection: "column",
   },
   text: {
-    color: "black",
+    color: "#333",
   },
 });
 
